@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGV Fault Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AGV Fault Details</h1>
+        <div id="report-details">
+            <!-- Report details will be populated here -->
+        </div>
+        <div class="button-group">
+            <button id="resolve-button" class="resolve-btn">Mark as Resolved</button>
+            <button onclick="window.close()" class="secondary-btn">Close Window</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/storage.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/details.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGV Fault Log</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="log-container container">
+        <h1>AGV Log</h1>
+        
+        <div class="log-header">
+            <div class="button-group">
+                <button id="back-home" onclick="window.location.href='/'">Back to Home</button>
+                <button id="view-resolved" onclick="window.location.href='/resolved.html'">View Resolved</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="search-agv" placeholder="Search by AGV #" />
+                <button id="clear-search" onclick="clearSearch()">Clear</button>
+            </div>
+        </div>
+        
+        <div id="maintenance-section" class="department-section">
+            <h3 class="department-title">Maintenance</h3>
+            <div id="maintenance-reports" class="reports-container"></div>
+        </div>
+
+        <div id="production-section" class="department-section">
+            <h3 class="department-title">Production</h3>
+            <div id="production-reports" class="reports-container"></div>
+        </div>
+
+        <div id="engineering-section" class="department-section">
+            <h3 class="department-title">Engineering</h3>
+            <div id="engineering-reports" class="reports-container"></div>
+        </div>
+
+        <div id="planning-section" class="department-section">
+            <h3 class="department-title">Planning</h3>
+            <div id="planning-reports" class="reports-container"></div>
+        </div>
+
+        <div id="rework-section" class="department-section">
+            <h3 class="department-title">Rework</h3>
+            <div id="rework-reports" class="reports-container"></div>
+        </div>
+
+        <div id="rk2-section" class="department-section">
+            <h3 class="department-title">RK2</h3>
+            <div id="rk2-reports" class="reports-container"></div>
+        </div>
+
+        <div id="other-section" class="department-section">
+            <h3 class="department-title">Other</h3>
+            <div id="other-reports" class="reports-container"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/storage.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/log.js') }}"></script>
+</body>
+</html>

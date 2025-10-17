@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGV Fault Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AGV Report</h1>
+        <div class="agv-info">
+            <h2 id="agv-display">AGV #</h2>
+        </div>
+        
+        <form id="fault-report-form">
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select id="department" required>
+                    <option value="">Select Department</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Production">Production</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Planning">Planning</option>
+                    <option value="Rework">Rework</option>
+                    <option value="RK2">RK2</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" placeholder="Column number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="responsible">Responsible Person:</label>
+                <input type="text" id="responsible" placeholder="Enter responsible person" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Issue Description:</label>
+                <textarea id="description" placeholder="Describe the issue" rows="4" required></textarea>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" id="submit-report">Submit Report</button>
+                <button type="button" id="view-log">View Log</button>
+                <button type="button" id="cancel-report" class="secondary-btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/storage.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/report.js') }}"></script>
+</body>
+</html>
